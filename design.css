@@ -100,7 +100,16 @@ font-weight: 900;}
     padding:5%;
     text-shadow: 2px 3.5px 7px rgb(81, 59, 59);
 }
-
+#res{
+    
+   
+    color: #4b6b44;
+    display: flex;
+    margin-top: 10%;
+    margin-left:10% ;
+    align-items: center;
+    justify-content: center;
+}
 .container2 {
     display: flex; 
   

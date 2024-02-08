@@ -105,6 +105,7 @@
    <button  class="send" type="submit">Send</button>
 
     </form>
+    <span id="res"></span>
 </div>
 <div class="right">
     <h2>Get In Touch....</h2>
@@ -116,7 +117,7 @@
     </div>
    
 </div>
-<footer>
+<div>
     <div class="foot-logo"> <a draggable="true" href="#home"><img class="logo"
         src="https://cdn0.iconfinder.com/data/icons/startup-and-new-business-3/24/developer-woman-1024.png"
         alt="devlogo"></a>
@@ -132,11 +133,20 @@
       <script>
         const scriptURL = 'https://script.google.com/macros/s/AKfycbwJWhGsFgiUL4GqMOR6Y_grfnNx34BFMRSb9EAlE4KqUB3deMErYwHpzgTRVTv1Qhrv/exec';
         const form = document.forms['submit-to-google-sheet'];
-      
+      const result=document.getElementById("res");
         form.addEventListener('submit', e => {
           e.preventDefault()
           fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-            .then(response => console.log('Success!', response))
+            .then(response => {
+                result.innerHTML="Message Sent Successfully!"
+                form.reset()
+                setTimeout(() => {
+                    result.innerHTML="";
+                }, 5000);
+                
+            }
+           
+            )
             .catch(error => console.error('Error!', error.message))
         })
       </script>
