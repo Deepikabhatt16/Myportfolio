@@ -48,7 +48,7 @@
                
             <p>Hello! I'm Deepika Bhatt a front-end web developer or web designer currently pursuing graduation in computer science. I have learn front-end stuff so far and love to make interactive or responsive web-site or web application
                  from my experience.I always try to make things done in simple or straight manner for the user , I belive that any web application looks more interactive or engaged by people if it is easy to use.
-             </p>   <button class="btn">Download-Cv</button>
+             </p>   <button class="btn"><a href="resume.docx" download >Download-Cv</a></button>
          
         </div>
 
@@ -68,14 +68,14 @@
     
 </div>
 <div class="box box-2">
-    <h2>Island Girl(ecommerce-website)</h2>
+    <h2>Ecommerce Site</h2>
     <div class="pro">
     <button class="probtn"><a href="https://deepikabhatt16.github.io/ISLAND_GIRL/Island_girl/main-1.html"> veiw live </a></button>
     <button class="probtn"><a href="https://github.com/Deepikabhatt16/ISLAND_GIRL">view code</a></button>
 </div>
 </div>
 <div class="box box-3">
-    <h2>TinDog Site</h2>
+    <h2>TinDog Site</h2> 
     <div class="pro">
   <button class="probtn"><a href="https://deepikabhatt16.github.io/DemoWebsite/TinDog.html">view live</a></button>
         <button class="probtn"> <a href="https://github.com/Deepikabhatt16/DemoWebsite">view code</a></button>
@@ -98,11 +98,12 @@
         <h1>Contact-Me</h1>
         <div class="container4">
             <div class="left">
-    <form class="form" action="" method="post">
-        <div class="input"><input type="name" name="name" class="name" placeholder="your name" required>
-   <input type="email" name="email-id" class="email-id" placeholder="your email-id" required> </div>
-        <div><textarea name="textarea" cols="20" rows="5" placeholder="your message" required></textarea></div>
-    <input type="submit" name="submit" class="send-btn" value="send">
+    <form name="submit-to-google-sheet" class="form">
+        <div class="input"><input type="name" name="NAME" class="name" placeholder="your name" required>
+   <input type="email" name="EMAIL-ID" class="email-id" placeholder="your email-id" required> </div>
+        <div class="message"><textarea name="MESSAGE" cols="20" rows="5" placeholder="your message" required></textarea></div>
+   <button  class="send" type="submit">Send</button>
+
     </form>
 </div>
 <div class="right">
@@ -126,6 +127,19 @@
 </footer>
 
     <script src="https://kit.fontawesome.com/d64d505cfa.js" crossorigin="anonymous"></script>
+    
+      
+      <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwJWhGsFgiUL4GqMOR6Y_grfnNx34BFMRSb9EAlE4KqUB3deMErYwHpzgTRVTv1Qhrv/exec';
+        const form = document.forms['submit-to-google-sheet'];
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => console.log('Success!', response))
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
 </body>
 
 </html>
