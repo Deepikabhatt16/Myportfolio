@@ -139,11 +139,11 @@
           fetch(scriptURL, { method: 'POST', body: new FormData(form)})
             .then(response => {
                 result.innerHTML="Message Sent Successfully!"
-                form.reset()
+             
                 setTimeout(() => {
                     result.innerHTML="";
                 }, 5000);
-                
+                form.reset()
             }
            
             )
